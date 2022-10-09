@@ -10,7 +10,7 @@ function App() {
   const [q, setq] = useState('');
   // const [searched,setSearched]=useState(false);
   //getting apiKey from .env.local file
-  const apiKey = process.env.REACT_APP_NEWS_API;
+  const apiKey = "dae96dee6218419d8a116a1cf000e276";
   return (
     <div className="App">
       <Navbar apiKey={apiKey} setQ = {setq}/>
