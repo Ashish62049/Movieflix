@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import NewsItem from "../NewsItem/NewsItem";
 import Spinner from "../Spinner/Spinner";
+
 import InfiniteScroll from "react-infinite-scroll-component";
 import PropTypes from "prop-types";
 
@@ -10,7 +11,7 @@ const News = (props) => {
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
   const { category, country, pageSize,setProgress,apiKey, q,language,searched} = props;
-
+  console.log(q);
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
@@ -58,14 +59,13 @@ const News = (props) => {
     <>
       <h1 className="text-center text-white" style={{marginTop:'75px'}}>
         {(searched && q!== "")?`Searched results for ${capitalizeFirstLetter(q)}`:`${capitalizeFirstLetter(category)}-Top Headlines`}
-        {/* {capitalizeFirstLetter(category)}-Top Headlines */}
       </h1>
       {loading && <Spinner/>}
       <InfiniteScroll
         dataLength={articles.length}
         next={fetchMoreData}
         hasMore={articles.length !== totalResults}
-        loader={<Spinner />}
+        loader={!loading && <Spinner />}
       >
         <div className="container">
         <div className="row">

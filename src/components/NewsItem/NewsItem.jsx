@@ -43,10 +43,9 @@ const NewsItem = (props) => {
             rel="noreferrer"
             className="btn btn-sm text-white mb-2"
             style={{ backgroundColor: categoryColorHandler()
-            ,padding:isHover?'6px 10px':'4px 8px'}}
+            ,scale:isHover?'1.05':'1'}}
             onMouseEnter={()=>{setIsHover(true)}}
             onMouseLeave={()=>{setIsHover(false)}
-            
             }
             
           >

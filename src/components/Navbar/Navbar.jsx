@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 const Navbar = (props) => {
   const [inputValue, setInputValue] = useState("");
+  const clickHandler=()=>{
+    props.setQ(inputValue);
+  }
+  // const keyPressHandler=(e)=>{
+  //   if(e.key==='Enter'){
+  //     this.link.click();
+  //   }
+  // }
   return (
     <div>
       <nav
@@ -104,9 +112,7 @@ const Navbar = (props) => {
                 }}
               />
               <Link
-                onClick={() => {
-                  props.setQ(inputValue);
-                }}
+                onClick={clickHandler}
                 to={`/search/${inputValue}`}
                 className="btn btn-danger"
               >

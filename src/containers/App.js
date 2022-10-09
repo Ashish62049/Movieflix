@@ -111,9 +111,9 @@ function App() {
           path={`/search/${q}`}
           element={
             <News
-              setProgress={setProgress}
-              pageSize={pageSize}
-              apiKey={apiKey}
+              setProgress = {setProgress}
+              pageSize = {pageSize}
+              apiKey = {apiKey}
               searched = {true}
               q={q}
               language="en"
